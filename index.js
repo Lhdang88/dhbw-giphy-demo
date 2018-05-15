@@ -37,8 +37,26 @@ app.use((req, res, next) => {
 });
 
 app.get('/giphy', (req, res) => {
-    //make a giphy API Call here and redirect to the giphy-page
-    res.send('OK');
+    const options = {
+        uri: GIPHY_URL,
+        qs: {
+            api_key: GIPHY_API_KEY, // -> uri + '?api_key=xxxxx%20xxxxx'
+            tag: req.query.keyword
+        },
+        json: true
+    };
+     
+    rp(options)
+        .then(result => {
+            //console.log(result);
+            console.log(`redirecting to ${result.data.embed_url}`);
+            res.redirect(302, result.data.embed_url);
+        })
+        .catch(err => {
+            // API call failed...
+            res.status(500);
+            res.send({msg: 'Giphy Call failed', error: err});
+        });
 });
 console.log(`*** API [GET] /giphy registered`);
 
