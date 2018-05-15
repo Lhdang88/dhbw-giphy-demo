@@ -1,0 +1,9 @@
+---
+applications:
+- name: dhbw-giphy-demo
+  memory: 512M
+  disk_quota: 512MB
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  env:
+    GIPHY_API_KEY: abcdefghij
+command: node index.js
