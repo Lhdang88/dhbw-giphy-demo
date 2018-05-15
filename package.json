@@ -1,0 +1,29 @@
+{
+  "name": "dhbw-giphy-demo",
+  "version": "1.0.0",
+  "description": "dhbw github demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lhdang88/dhbw-giphy-demo.git"
+  },
+  "keywords": [
+    "dhbw"
+  ],
+  "author": "lhdang.88@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lhdang88/dhbw-giphy-demo/issues"
+  },
+  "homepage": "https://github.com/Lhdang88/dhbw-giphy-demo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "request": "^2.86.0",
+    "request-promise": "^4.2.2"
+  }
+}
